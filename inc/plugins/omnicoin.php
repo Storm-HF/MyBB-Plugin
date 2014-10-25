@@ -112,7 +112,7 @@ function omnicoin_activate()
 	$db->insert_query("templates", $template);
 	//find_replace_templatesets("member_profile", "#".preg_quote('{$warning_level}')."#i", '{\$warning_level}{\$omc_address_profile}');
 	//Temporarily replaced - <td class="trow1">{$address}&nbsp;<a href="misc.php?action=omchistory&uid={$memprofile[\\\'uid\\\']}">[History]</a></td> with <td class="trow1">{$address}</td> as it was throwing security flags. Working on fix.
-	find_replace_templatesets("member_profile", '#'.preg_quote('{$warning_level}').'#', '{\$warning_level}<tr><td class="trow1"><strong>Omnicoin address:</strong></td></tr><td class="trow1">{$address}</td>');
+	find_replace_templatesets("member_profile", '#'.preg_quote('{$warning_level}').'#', '{\$warning_level}<tr><td class="trow1"><strong>Omnicoin address:</strong></td><td class="trow1">{$address}</td></tr>');
     	
     	$AddressHistoryTemplate = array(
         "tid"        	=> NULL,
